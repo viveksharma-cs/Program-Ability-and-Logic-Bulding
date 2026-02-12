@@ -1,15 +1,18 @@
-#  Given an array arr[]. The task is to find the largest element and return it. 
-# Examples: 
-# Input: arr[] = [1, 8, 7, 56, 90] 
-# Output: 90 
-# Explanation: The largest element of the given array is 90.
-def largest_element(arr):
-    max_element = arr[0]
-    for x in arr:
-        if x > max_element:
-            max_element = x
-    return max_element
-arr = [1, 8, 7, 56, 90]
-print(largest_element(arr)) 
+#Given an array of integers nums and an integer target, return indices of the two 
+#numbers such that they add up to target. 
+#You may assume that each input would have exactly one solution, and you may 
+#not use the same element twice. 
+#You can return the answer in any order. 
+  
+def twoSum(nums, target):
+    seen = {}
 
+    for i, num in enumerate(nums):
+        need = target - num
+        if need in seen:
+            return [seen[need], i]
+        seen[num] = i
 
+nums = [2, 7, 11, 15]
+target = 9
+print(twoSum(nums,target))

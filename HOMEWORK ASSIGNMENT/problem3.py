@@ -1,20 +1,15 @@
-#  Given an integer array arr[] and an integer k, your task is to find and return 
-# the kth smallest element in the given array. 
-# Note: The kth smallest element is determined based on the sorted order of the 
-# array. 
-# Examples : 
-# Input: arr[] = [10, 5, 4, 3, 48, 6, 2, 33, 53, 10], k = 4 
-# Output: 5 
-# Explanation: 4th smallest element in the given array is 5.
+#  Given an array arr[]. The task is to find the largest element and return it. 
+# Examples: 
+# Input: arr[] = [1, 8, 7, 56, 90] 
+# Output: 90 
+# Explanation: The largest element of the given array is 90.
+def largest_element(arr):
+    max_element = arr[0]
+    for x in arr:
+        if x > max_element:
+            max_element = x
+    return max_element
+arr = [1, 8, 7, 56, 90]
+print(largest_element(arr)) 
 
 
-def kth_smallest(arr, k):
-    arr.sort()
-    return arr[k-1]
-
-arr = [10, 5, 4, 3, 48, 6, 2, 33, 53, 10]
-k = int(input("Enter the value of k: ") )
-
-
-print(kth_smallest(arr, k))
-print(arr)

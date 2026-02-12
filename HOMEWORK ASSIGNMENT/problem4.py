@@ -1,23 +1,23 @@
-#  You are given two arrays a[] and b[], return the Union of both the arrays in any 
-# order. 
-# The Union of two arrays is a collection of all distinct elements present in either of 
-# the arrays. If an element appears more than once in one or both arrays, it should be 
-# included only once in the result. 
-# Note: Elements of a[] and b[] are not necessarily distinct. 
-# Note that, You can return the Union in any order but the driver code will print the 
-# result in sorted order only. 
-# Examples: 
-# Input: a[] = [1, 2, 3, 2, 1], b[] = [3, 2, 2, 3, 3, 2] 
-# Output: [1, 2, 3] 
-# Explanation: Union set of both the arrays will be 1, 2 and 3.
-def union_arrays(a, b):
-    s = set()
-    for x in a:
-        s.add(x)
-    for x in b:
-        s.add(x)
-    return list(s)
-a = [1, 2, 3, 2, 1]
-b = [3, 2, 2, 3, 3, 2]
-result = union_arrays(a, b)
-print(sorted(result))   
+
+# Given a sorted array of distinct integers and a target value, return the index if the 
+#target is found. If not, return the index where it would be if it were inserted in 
+#order. 
+
+def index_val(num,target):
+    l, r = 0, len(num) - 1
+
+    while l <= r:
+        m = (l + r) // 2
+        if num[m] == target:
+            return m
+        if num[m] < target:
+            l = m + 1
+        else:
+            r = m - 1
+
+    return l
+
+num = [1,3,5,6]
+target =  5
+
+print(index_val(num,target))
